@@ -30,6 +30,7 @@ const CGFloat kDefaultTimer = 5.0f;
     if (self)
     {
         [self setUpTimerWithInterval:kDefaultTimer];
+        [self.updateTimer fire];
     }
     return self;
 }
