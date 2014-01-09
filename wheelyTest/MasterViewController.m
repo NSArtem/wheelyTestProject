@@ -56,15 +56,7 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
                                       reuseIdentifier:kReusableCellIdentifier];
     }
     
-    NSMutableArray *keys = [[NetworkLoader shared].recordsStorage.allKeys mutableCopy];
-
-    
-    NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
-    [keys sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
-    
-    NSNumber *currentRecordID = keys[indexPath.row];
-    
-    NetworkRecord *record = [[NetworkLoader shared].recordsStorage objectForKey:currentRecordID];
+    NetworkRecord *record = [self networkRecordForIndexPath:indexPath];
     cell.textLabel.text = record.title;
     cell.detailTextLabel.text = record.text;
     
@@ -94,6 +86,31 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
 {
     //TODO: add records with animation
     [self.tableView reloadData];
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:tableView.indexPathForSelectedRow animated:YES];
+    DetailViewController *detailViewController =
+        [[DetailViewController alloc] initWithNetworkRecord:[self networkRecordForIndexPath:indexPath]];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+#pragma mark - Utility
+- (NetworkRecord*)networkRecordForIndexPath:(NSIndexPath*)indexPath
+{
+    NSUInteger row = indexPath.row;
+    
+    NSMutableArray *keys = [[NetworkLoader shared].recordsStorage.allKeys mutableCopy];
+    
+    
+    NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [keys sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
+    
+    NSNumber *currentRecordID = keys[row];
+    
+    return [[NetworkLoader shared].recordsStorage objectForKey:currentRecordID];
 }
 
 
