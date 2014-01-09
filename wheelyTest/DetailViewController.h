@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class NetworkRecord;
+
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (nonatomic, strong) NetworkRecord *networkRecord;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (instancetype)initWithNetworkRecord:(NetworkRecord*)networkRecord;
+
 @end
