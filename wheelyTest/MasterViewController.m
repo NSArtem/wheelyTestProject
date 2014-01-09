@@ -9,105 +9,89 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "NetworkLoader.h"
 
-@interface MasterViewController () {
-    NSMutableArray *_objects;
-}
+NSString* const kReusableCellIdentifier = @"cellTableView";
+
+@interface MasterViewController ()<UITableViewDataSource, UITableViewDelegate, NetworkLoaderProtocol>
+
+@property(nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation MasterViewController
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [NetworkLoader shared].delegate = self;
+    
+    //TableView
+    CGRect rect = CGRectMake(0, 0,
+                              CGRectGetWidth(self.view.bounds),
+                              CGRectGetHeight(self.view.bounds));
+    self.tableView = [[UITableView alloc] initWithFrame:rect
+                                                  style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    
+    //Top Right Button
+    UIBarButtonItem *reloadButtonItem =
+        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                      target:self
+                                                      action:@selector(reloadButtonPressed:)];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableCellIdentifier];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:kReusableCellIdentifier];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+    
+    NSMutableArray *keys = [[NetworkLoader shared].recordsStorage.allKeys mutableCopy];
 
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return _objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    
+    NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [keys sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
+    
+    NSNumber *currentRecordID = keys[indexPath.row];
+    
+    NetworkRecord *record = [[NetworkLoader shared].recordsStorage objectForKey:currentRecordID];
+    cell.textLabel.text = record.title;
+    cell.detailTextLabel.text = record.text;
+    
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return [NetworkLoader shared].recordsStorage.count;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Actions
+- (void)reloadButtonPressed:(id)sender
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
+    [[NetworkLoader shared] forceUpdate];
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+#pragma mark - NetworkLoaderProtocol
+- (void)recordWasPurged:(NSNumber*)recordID
 {
+    //TODO: remove records with animation
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)recordWasAdded:(NSNumber*)recordID
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    //TODO: add records with animation
+    [self.tableView reloadData];
 }
-*/
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
 
 @end

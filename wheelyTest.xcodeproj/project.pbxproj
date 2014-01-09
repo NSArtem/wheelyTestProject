@@ -13,7 +13,6 @@
 		BF1986B4187EA82D005C0E18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1986B2187EA82D005C0E18 /* InfoPlist.strings */; };
 		BF1986B6187EA82D005C0E18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986B5187EA82D005C0E18 /* main.m */; };
 		BF1986BA187EA82D005C0E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986B9187EA82D005C0E18 /* AppDelegate.m */; };
-		BF1986BD187EA82D005C0E18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1986BB187EA82D005C0E18 /* Main.storyboard */; };
 		BF1986C0187EA82D005C0E18 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986BF187EA82D005C0E18 /* MasterViewController.m */; };
 		BF1986C3187EA82D005C0E18 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986C2187EA82D005C0E18 /* DetailViewController.m */; };
 		BF1986C5187EA82D005C0E18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1986C4187EA82D005C0E18 /* Images.xcassets */; };
@@ -22,6 +21,8 @@
 		BF1986CE187EA82D005C0E18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986AD187EA82D005C0E18 /* UIKit.framework */; };
 		BF1986D6187EA82D005C0E18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1986D4187EA82D005C0E18 /* InfoPlist.strings */; };
 		BF1986D8187EA82D005C0E18 /* wheelyTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986D7187EA82D005C0E18 /* wheelyTestTests.m */; };
+		BF1986E7187EA87D005C0E18 /* NetworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986E6187EA87D005C0E18 /* NetworkLoader.m */; };
+		BF1986EA187EA8AD005C0E18 /* NetworkRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986E9187EA8AD005C0E18 /* NetworkRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		BF1986B7187EA82D005C0E18 /* wheelyTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wheelyTest-Prefix.pch"; sourceTree = "<group>"; };
 		BF1986B8187EA82D005C0E18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF1986B9187EA82D005C0E18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BF1986BC187EA82D005C0E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF1986BE187EA82D005C0E18 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		BF1986BF187EA82D005C0E18 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		BF1986C1187EA82D005C0E18 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -56,6 +56,10 @@
 		BF1986D3187EA82D005C0E18 /* wheelyTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wheelyTestTests-Info.plist"; sourceTree = "<group>"; };
 		BF1986D5187EA82D005C0E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF1986D7187EA82D005C0E18 /* wheelyTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wheelyTestTests.m; sourceTree = "<group>"; };
+		BF1986E5187EA87D005C0E18 /* NetworkLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLoader.h; sourceTree = "<group>"; };
+		BF1986E6187EA87D005C0E18 /* NetworkLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkLoader.m; sourceTree = "<group>"; };
+		BF1986E8187EA8AD005C0E18 /* NetworkRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRecord.h; sourceTree = "<group>"; };
+		BF1986E9187EA8AD005C0E18 /* NetworkRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +119,9 @@
 		BF1986AF187EA82D005C0E18 /* wheelyTest */ = {
 			isa = PBXGroup;
 			children = (
-				BF1986B8187EA82D005C0E18 /* AppDelegate.h */,
-				BF1986B9187EA82D005C0E18 /* AppDelegate.m */,
-				BF1986BB187EA82D005C0E18 /* Main.storyboard */,
-				BF1986BE187EA82D005C0E18 /* MasterViewController.h */,
-				BF1986BF187EA82D005C0E18 /* MasterViewController.m */,
-				BF1986C1187EA82D005C0E18 /* DetailViewController.h */,
-				BF1986C2187EA82D005C0E18 /* DetailViewController.m */,
+				BF1986E4187EA868005C0E18 /* Model */,
+				BF1986E1187EA839005C0E18 /* AppDelegate */,
+				BF1986E3187EA849005C0E18 /* ViewControllers */,
 				BF1986C4187EA82D005C0E18 /* Images.xcassets */,
 				BF1986B0187EA82D005C0E18 /* Supporting Files */,
 			);
@@ -155,6 +155,37 @@
 				BF1986D4187EA82D005C0E18 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF1986E1187EA839005C0E18 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF1986B8187EA82D005C0E18 /* AppDelegate.h */,
+				BF1986B9187EA82D005C0E18 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BF1986E3187EA849005C0E18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF1986BE187EA82D005C0E18 /* MasterViewController.h */,
+				BF1986BF187EA82D005C0E18 /* MasterViewController.m */,
+				BF1986C2187EA82D005C0E18 /* DetailViewController.m */,
+				BF1986C1187EA82D005C0E18 /* DetailViewController.h */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BF1986E4187EA868005C0E18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF1986E5187EA87D005C0E18 /* NetworkLoader.h */,
+				BF1986E6187EA87D005C0E18 /* NetworkLoader.m */,
+				BF1986E8187EA8AD005C0E18 /* NetworkRecord.h */,
+				BF1986E9187EA8AD005C0E18 /* NetworkRecord.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +266,6 @@
 			files = (
 				BF1986C5187EA82D005C0E18 /* Images.xcassets in Resources */,
 				BF1986B4187EA82D005C0E18 /* InfoPlist.strings in Resources */,
-				BF1986BD187EA82D005C0E18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1986E7187EA87D005C0E18 /* NetworkLoader.m in Sources */,
 				BF1986BA187EA82D005C0E18 /* AppDelegate.m in Sources */,
 				BF1986C0187EA82D005C0E18 /* MasterViewController.m in Sources */,
+				BF1986EA187EA8AD005C0E18 /* NetworkRecord.m in Sources */,
 				BF1986B6187EA82D005C0E18 /* main.m in Sources */,
 				BF1986C3187EA82D005C0E18 /* DetailViewController.m in Sources */,
 			);
@@ -286,14 +318,6 @@
 				BF1986B3187EA82D005C0E18 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BF1986BB187EA82D005C0E18 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF1986BC187EA82D005C0E18 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		BF1986D4187EA82D005C0E18 /* InfoPlist.strings */ = {

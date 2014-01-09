@@ -7,12 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "MasterViewController.h"
+
+@interface AppDelegate()
+
+@property(nonatomic, strong) MasterViewController *masterVC;
+
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.masterVC = [[MasterViewController alloc] init];
+    self.window.rootViewController = self.masterVC;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
