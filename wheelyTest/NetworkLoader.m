@@ -164,7 +164,7 @@ const CGFloat kDefaultTimer = 5.0f;
     return error;
 }
 
-#pragma mark NSURLConnection
+#pragma mark - NSURLConnection
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"Connection failed: %@", error);
