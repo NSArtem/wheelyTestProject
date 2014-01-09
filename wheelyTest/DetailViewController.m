@@ -59,6 +59,8 @@ typedef NS_ENUM(NSUInteger, DetailTableViewSections)
                                                   style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.title = self.networkRecord.title;
 
     [self.view addSubview:self.tableView];
 
