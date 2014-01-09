@@ -16,6 +16,7 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
 @interface MasterViewController ()<UITableViewDataSource, UITableViewDelegate, NetworkLoaderProtocol>
 
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UIView *overlayView;
 
 @end
 
@@ -43,6 +44,8 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
                                                       target:self
                                                       action:@selector(reloadButtonPressed:)];
     self.navigationItem.rightBarButtonItem = reloadButtonItem;
+    
+    [self displayOverlay:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -80,12 +83,14 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
 {
     //TODO: remove records with animation
     [self.tableView reloadData];
+    [self displayOverlay:NO];
 }
 
 - (void)recordWasAdded:(NSNumber*)recordID
 {
     //TODO: add records with animation
     [self.tableView reloadData];
+    [self displayOverlay:NO];
 }
 
 #pragma mark - UITableViewDelegate
@@ -111,6 +116,27 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
     NSNumber *currentRecordID = keys[row];
     
     return [[NetworkLoader shared].recordsStorage objectForKey:currentRecordID];
+}
+
+#pragma mark - Overlay
+- (void)displayOverlay:(BOOL)state
+{
+    if (!state)
+    {
+        [self.overlayView removeFromSuperview];
+        return;
+    }
+    
+    //TODO: Offset
+    self.overlayView = [[UIView alloc] initWithFrame:self.tableView.bounds];
+    self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    UIActivityIndicatorView *activityIndicator =
+        [[UIActivityIndicatorView alloc]
+         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.center = self.overlayView.center;
+    [self.overlayView addSubview:activityIndicator];
+    [activityIndicator startAnimating];
+    [self.tableView addSubview:self.overlayView];
 }
 
 
