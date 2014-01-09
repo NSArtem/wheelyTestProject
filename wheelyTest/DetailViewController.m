@@ -14,6 +14,7 @@ NSString* const kDetailCellIdentifier = @"kDetailCellIdentifier";
 NSString* const kDetailLongTextIdentifier = @"kDetailLongTextIdentifier";
 
 const CGFloat kTextVerticalPadding = 30.0f;
+const CGFloat kTextHorizontalPadding = 15.0f;
 
 typedef NS_ENUM(NSUInteger, DetailTableViewSections)
 {
@@ -101,11 +102,10 @@ typedef NS_ENUM(NSUInteger, DetailTableViewSections)
             label.numberOfLines = 0;
             label.lineBreakMode = NSLineBreakByWordWrapping;
             label.text = self.networkRecord.text;
-            NSLog(@"FONT: %@", label.font);
             CGRect rect = [self getRectForText:label.text withWidth:tableView.bounds.size.width];
             rect.origin.y = kTextVerticalPadding / 2;
+            rect.origin.x += kTextHorizontalPadding;
             label.frame = rect;
-            NSLog(@"%@", self.networkRecord.text);
             [cell.contentView addSubview:label];
 
             return cell;
@@ -159,7 +159,7 @@ typedef NS_ENUM(NSUInteger, DetailTableViewSections)
 #pragma mark - Utility
 - (CGRect)getRectForText:(NSString*)text withWidth:(CGFloat)width
 {
-    CGSize constraintSize = CGSizeMake(width, MAXFLOAT);
+    CGSize constraintSize = CGSizeMake(width - kTextHorizontalPadding * 2, MAXFLOAT);
     NSDictionary *attributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:17.0f]};
     CGRect rect = [text boundingRectWithSize:constraintSize
                                      options:NSStringDrawingUsesLineFragmentOrigin
