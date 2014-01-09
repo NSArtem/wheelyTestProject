@@ -12,6 +12,7 @@
 @interface AppDelegate()
 
 @property(nonatomic, strong) MasterViewController *masterVC;
+@property(nonatomic, strong) UINavigationController *navigationController;
 
 @end
 
@@ -23,7 +24,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.masterVC = [[MasterViewController alloc] init];
-    self.window.rootViewController = self.masterVC;
+    self.navigationController =
+        [[UINavigationController alloc] initWithRootViewController:self.masterVC];
+    
+    self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
     return YES;

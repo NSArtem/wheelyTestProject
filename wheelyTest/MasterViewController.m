@@ -35,11 +35,14 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
     
+    self.title = @"Crazy Wheel";
+    
     //Top Right Button
     UIBarButtonItem *reloadButtonItem =
         [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                       target:self
                                                       action:@selector(reloadButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = reloadButtonItem;
 }
 
 #pragma mark - UITableViewDataSource
