@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ACF684EB1F4F8205007ACEB7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF1986A6187EA82D005C0E18 /* wheelyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wheelyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1986B1187EA82D005C0E18 /* wheelyTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wheelyTest-Info.plist"; sourceTree = "<group>"; };
 		BF1986B3187EA82D005C0E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		BF19869D187EA82D005C0E18 = {
 			isa = PBXGroup;
 			children = (
+				ACF684EB1F4F8205007ACEB7 /* README.md */,
 				BF1986AF187EA82D005C0E18 /* wheelyTest */,
 				BF1986D1187EA82D005C0E18 /* wheelyTestTests */,
 				BF1986A7187EA82D005C0E18 /* Products */,
