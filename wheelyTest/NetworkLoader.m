@@ -181,7 +181,7 @@ const CGFloat kDefaultTimer = 5.0f;
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse *httpURLResponce = (NSHTTPURLResponse*)response;
-    NSLog(@"HTTP response: %d", httpURLResponce.statusCode);
+    NSLog(@"HTTP response: %ld", httpURLResponce.statusCode);
     self.connectionData = [NSMutableData new];
 }
 

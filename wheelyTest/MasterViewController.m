@@ -24,6 +24,7 @@ NSString* const kReusableCellIdentifier = @"cellTableView";
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     [NetworkLoader shared].delegate = self;
     
     //TableView

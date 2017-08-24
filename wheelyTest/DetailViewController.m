@@ -52,6 +52,7 @@ typedef NS_ENUM(NSUInteger, DetailTableViewSections)
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     CGRect rect = CGRectMake(0, 0,
                              CGRectGetWidth(self.view.bounds),
                              CGRectGetHeight(self.view.bounds));
@@ -117,6 +118,7 @@ typedef NS_ENUM(NSUInteger, DetailTableViewSections)
         default:
             break;
     }
+    if (cell == nil) abort();
     return cell;
 }
 
