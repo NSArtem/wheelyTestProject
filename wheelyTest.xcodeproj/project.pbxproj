@@ -7,18 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF1986AA187EA82D005C0E18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986A9187EA82D005C0E18 /* Foundation.framework */; };
-		BF1986AC187EA82D005C0E18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986AB187EA82D005C0E18 /* CoreGraphics.framework */; };
-		BF1986AE187EA82D005C0E18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986AD187EA82D005C0E18 /* UIKit.framework */; };
 		BF1986B4187EA82D005C0E18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1986B2187EA82D005C0E18 /* InfoPlist.strings */; };
 		BF1986B6187EA82D005C0E18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986B5187EA82D005C0E18 /* main.m */; };
 		BF1986BA187EA82D005C0E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986B9187EA82D005C0E18 /* AppDelegate.m */; };
 		BF1986C0187EA82D005C0E18 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986BF187EA82D005C0E18 /* MasterViewController.m */; };
 		BF1986C3187EA82D005C0E18 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986C2187EA82D005C0E18 /* DetailViewController.m */; };
 		BF1986C5187EA82D005C0E18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1986C4187EA82D005C0E18 /* Images.xcassets */; };
-		BF1986CC187EA82D005C0E18 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986CB187EA82D005C0E18 /* XCTest.framework */; };
-		BF1986CD187EA82D005C0E18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986A9187EA82D005C0E18 /* Foundation.framework */; };
-		BF1986CE187EA82D005C0E18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1986AD187EA82D005C0E18 /* UIKit.framework */; };
 		BF1986D6187EA82D005C0E18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF1986D4187EA82D005C0E18 /* InfoPlist.strings */; };
 		BF1986D8187EA82D005C0E18 /* wheelyTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986D7187EA82D005C0E18 /* wheelyTestTests.m */; };
 		BF1986E7187EA87D005C0E18 /* NetworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1986E6187EA87D005C0E18 /* NetworkLoader.m */; };
@@ -37,9 +31,6 @@
 
 /* Begin PBXFileReference section */
 		BF1986A6187EA82D005C0E18 /* wheelyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wheelyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF1986A9187EA82D005C0E18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BF1986AB187EA82D005C0E18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BF1986AD187EA82D005C0E18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF1986B1187EA82D005C0E18 /* wheelyTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wheelyTest-Info.plist"; sourceTree = "<group>"; };
 		BF1986B3187EA82D005C0E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF1986B5187EA82D005C0E18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +42,6 @@
 		BF1986C2187EA82D005C0E18 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BF1986C4187EA82D005C0E18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF1986CA187EA82D005C0E18 /* wheelyTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wheelyTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF1986CB187EA82D005C0E18 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BF1986D3187EA82D005C0E18 /* wheelyTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wheelyTestTests-Info.plist"; sourceTree = "<group>"; };
 		BF1986D5187EA82D005C0E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF1986D7187EA82D005C0E18 /* wheelyTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wheelyTestTests.m; sourceTree = "<group>"; };
@@ -66,9 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1986AC187EA82D005C0E18 /* CoreGraphics.framework in Frameworks */,
-				BF1986AE187EA82D005C0E18 /* UIKit.framework in Frameworks */,
-				BF1986AA187EA82D005C0E18 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1986CC187EA82D005C0E18 /* XCTest.framework in Frameworks */,
-				BF1986CE187EA82D005C0E18 /* UIKit.framework in Frameworks */,
-				BF1986CD187EA82D005C0E18 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +74,6 @@
 			children = (
 				BF1986AF187EA82D005C0E18 /* wheelyTest */,
 				BF1986D1187EA82D005C0E18 /* wheelyTestTests */,
-				BF1986A8187EA82D005C0E18 /* Frameworks */,
 				BF1986A7187EA82D005C0E18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,17 +85,6 @@
 				BF1986CA187EA82D005C0E18 /* wheelyTestTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BF1986A8187EA82D005C0E18 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF1986A9187EA82D005C0E18 /* Foundation.framework */,
-				BF1986AB187EA82D005C0E18 /* CoreGraphics.framework */,
-				BF1986AD187EA82D005C0E18 /* UIKit.framework */,
-				BF1986CB187EA82D005C0E18 /* XCTest.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BF1986AF187EA82D005C0E18 /* wheelyTest */ = {
