@@ -43,7 +43,6 @@
 		BF1986B1187EA82D005C0E18 /* wheelyTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wheelyTest-Info.plist"; sourceTree = "<group>"; };
 		BF1986B3187EA82D005C0E18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF1986B5187EA82D005C0E18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BF1986B7187EA82D005C0E18 /* wheelyTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wheelyTest-Prefix.pch"; sourceTree = "<group>"; };
 		BF1986B8187EA82D005C0E18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF1986B9187EA82D005C0E18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BF1986BE187EA82D005C0E18 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
@@ -134,7 +133,6 @@
 				BF1986B1187EA82D005C0E18 /* wheelyTest-Info.plist */,
 				BF1986B2187EA82D005C0E18 /* InfoPlist.strings */,
 				BF1986B5187EA82D005C0E18 /* main.m */,
-				BF1986B7187EA82D005C0E18 /* wheelyTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -430,7 +428,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "wheelyTest/wheelyTest-Prefix.pch";
 				INFOPLIST_FILE = "wheelyTest/wheelyTest-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arabramov.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,7 +441,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "wheelyTest/wheelyTest-Prefix.pch";
 				INFOPLIST_FILE = "wheelyTest/wheelyTest-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arabramov.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,7 +458,6 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "wheelyTest/wheelyTest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -485,7 +480,6 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "wheelyTest/wheelyTest-Prefix.pch";
 				INFOPLIST_FILE = "wheelyTestTests/wheelyTestTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arabramov.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

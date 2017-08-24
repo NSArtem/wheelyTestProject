@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Artem Abramov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import UIKit;
 #import "NetworkRecord.h"
 
 typedef NS_ENUM(NSUInteger, NetworkLoaderErrorCodes)
